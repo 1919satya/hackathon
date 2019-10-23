@@ -1,0 +1,74 @@
+package com.batch2;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+
+@RestController
+@RequestMapping("/user")
+public class LoginController {
+	
+	@Autowired
+	private LoginRegisterService loginRegisterService;
+	
+	  @RequestMapping("/") public ModelAndView displayLoginPage() {
+		  ModelAndView mv = new ModelAndView();
+		  mv.addObject("error"," ");
+		  mv.setViewName("login");
+		  return mv;
+	  }
+	  
+	  @RequestMapping("/register") public ModelAndView displayRegisterForm() {
+		  
+		  ModelAndView mv = new ModelAndView();
+		  mv.addObject("error","Password and Confirm Password Should Be Same ");
+		  mv.setViewName("register");
+		  return mv;
+	  }
+	  
+	  @RequestMapping("/validateRegistrationForm") 
+	  public ModelAndView validateRegistrationForm(Login register) {
+		  ModelAndView mv = new ModelAndView();
+		 //  System.out.println("Registration .....");
+		  if(register.getPassword().equals(register.getConfirmPassword())) {
+			  Login login = new Login();
+			  // check username uniqueness
+			  login.setUsername(register.getUsername());
+			  login.setPassword(register.getPassword());
+			  login.setCust_id(0);
+			  login = loginRegisterService.save(login);
+			  mv.addObject("error"," ");
+			  mv.setViewName("login");
+		  } else {
+			  mv.addObject("error","Password and Confirm Password Dosn't Match ");
+			  mv.setViewName("register");
+		  }
+		  return mv;
+	  }
+	 
+	  @RequestMapping(value="/authenticate/{username}/{password}")
+	  public String authenticateUser(@PathVariable("username")String username,@PathVariable("password") String password ) {
+		/*
+		 * String username = login.getUsername(); String password = login.getPassword();
+		 */
+		 // System.out.println(username + " : " +password);
+		  ModelAndView mv = new ModelAndView();
+		  String name = (String)loginRegisterService.authentication(username, password);
+		 // System.out.println(name);
+		  if(username.equals(name)) {
+			  // System.out.println("Redirecting to Dashboard");
+			  
+			  mv.setViewName("home"); 
+		  } else {
+			  mv.addObject("error","Username or Password incorrect");
+			  mv.setViewName("login");
+		  }
+		
+		  // System.out.println(mv.getViewName());
+		  return mv;
+	  }
+    
+}

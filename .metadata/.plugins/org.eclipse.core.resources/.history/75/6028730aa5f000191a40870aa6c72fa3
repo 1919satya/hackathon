@@ -1,0 +1,64 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Demo | Form </title>
+<link rel="stylesheet" href="registrationform.css" type="text/css" />
+<style>
+*{
+margin:0;
+}
+html {
+position:relative;
+height:100%;
+}
+
+#registration-form {
+position:absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+	<div id="registration-form">
+		<form >
+		<fieldset>
+		<legend>Registration Form</legend>
+		<table>
+		<tr>
+		<td>Username</td>
+		<td><input type="text" name="username" required></td>
+		</tr>
+		
+		<tr>
+		<td>Password</td>
+		<td><input type="password" name="password" id="password" required ></td>
+		</tr>
+		<tr>
+		<td>Confirm Password</td>
+		<td><input type="password" name="confirmPassword" id="passwordAgain" required placeholder="Same as Password"></td>
+		</tr>
+		<tr>
+		<td><input type="submit" value="Submit" onclick="checkPassWord()"/></td>
+		
+		</tr>
+		</table>
+		</fieldset>
+		</form>
+	</div>
+	<script>
+		/* function checkPassWord(){
+			if(document.getElementById("password").value == document.getElementById("passwordAgain").value) {
+				window.location.href="/validateRegistrationForm";
+			} else {
+				alert("Password and Confirm Password Dosn't Match ");
+			}
+		} */
+	</script>
+</body>
+</html>

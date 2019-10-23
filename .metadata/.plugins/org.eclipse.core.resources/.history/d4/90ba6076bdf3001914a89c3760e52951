@@ -1,0 +1,13 @@
+package com.batch2;
+
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+public interface AddressRepository {
+   @Query("select max(a.add_id) from Address a ")
+   int getAddressId();
+
+   void saveAddress(Address address);
+  }

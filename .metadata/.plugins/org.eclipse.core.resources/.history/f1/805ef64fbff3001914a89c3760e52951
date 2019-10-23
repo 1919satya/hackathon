@@ -1,0 +1,30 @@
+package com.batch2;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.client.RestTemplate;
+
+public class RemoteAddressRepository implements AddressService  {
+
+	@Autowired
+	protected RestTemplate restTemplate;  
+	
+	String serviceUrl;
+
+	public RemoteAddressRepository(String serviceUrl) {
+		this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl : "http://"+serviceUrl;
+	}
+
+	@Override
+	public void save(Address address) {
+		String url = serviceUrl + "/address/saveDetails/";
+		 restTemplate.getForObject(url, Address.class,address);
+	
+	}
+
+	@Override
+	public int getAddressId() {
+		
+	}
+	
+	
+}

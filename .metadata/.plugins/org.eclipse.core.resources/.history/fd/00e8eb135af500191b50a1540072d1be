@@ -1,0 +1,8 @@
+package com.batch2;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public interface CustomerLoanService {
+   public CustomerLoan save(CustomerLoan cl);
+}

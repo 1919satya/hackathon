@@ -1,0 +1,7 @@
+package com.batch2;
+
+
+
+public class AddressRepository implements AddressService {
+  
+  }

@@ -1,0 +1,27 @@
+package com.batch2;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.client.RestTemplate;
+
+public class RemoteCustomerRepository implements CustomerService{
+
+	@Autowired
+	protected RestTemplate restTemplate;  
+	
+	String serviceUrl;
+	
+	
+
+	public RemoteCustomerRepository() {
+		super();
+	}
+
+	public RemoteCustomerRepository(String serviceUrl) {
+		this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl : "http://"+serviceUrl;
+	}
+	@Override
+	public int getCust_idByLogin_id(int login_id) {
+		
+	}
+        
+}

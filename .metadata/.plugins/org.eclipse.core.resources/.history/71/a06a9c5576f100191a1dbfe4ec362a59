@@ -1,0 +1,38 @@
+package com.batch2;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.client.RestTemplate;
+
+@Repository
+public class RemoteLoginRegisterRepository implements LoginRegisterService{
+
+	@Autowired
+	protected RestTemplate restTemplate;  
+	
+	@Autowired
+	private LoginRegisterRepository loginRegisterRepository;
+	
+	protected String serviceUrl;
+
+	public RemoteLoginRegisterRepository(String serviceUrl) {
+		this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl : "http://"+serviceUrl;
+	}
+
+	@Override
+	public String authentication(String username, String password) {
+		String name = restTemplate.getForObject(serviceUrl + "/authenticate?username="+username+"&password="+password, String.class);
+		return loginRegisterRepository.authentication(username, password);
+	}
+
+	@Override
+	public Login save(Login login) {
+		return loginRegisterRepository.save(login);
+	}
+	
+	
+
+	
+	
+
+}

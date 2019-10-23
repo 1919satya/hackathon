@@ -1,0 +1,11 @@
+package com.batch2;
+
+
+public class RemoteAddressRepository implements AddressService  {
+
+	public RemoteAddressRepository(String loginServiceUrl) {
+		// TODO Auto-generated constructor stub
+	}
+ 
+	
+}

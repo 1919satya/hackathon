@@ -1,0 +1,12 @@
+package com.batch2;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface LoginRegisterRepository{
+
+	String authentication(String username, String password);
+	
+	
+
+}

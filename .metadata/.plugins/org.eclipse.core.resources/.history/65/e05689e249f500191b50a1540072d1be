@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="C:\Users\coalesce\Documents\Hackathon\BankWebClient\src\main\webapp\WEB-INF\pages\css\form.css" type="text/css" />
+<script src="C:\Users\coalesce\Documents\Hackathon\BankWebClient\src\main\webapp\WEB-INF\pages\js\formjs" ></script>
+</head>
+<body>
+<c:out value="${error}" ></c:out>
+<div id="registration-form">
+			
+					<div id="formHeader" >
+						<h5>Login</h5>
+					</div>
+					<form action="/user/authenticate">
+			
+						<table>
+						<tr>
+							<td><input type="text" name="username" id="username" required placeholder="Username"></td>
+						</tr>
+						
+						<tr>
+							<td><input type="password" name="password" id="password" required placeholder="Password" ></td>
+						</tr>
+						<tr>
+							<td><div  class="formDivs">
+								<input type="button" id="formButton" value="Login"/>
+							</div></td>
+						</tr>
+						</table>
+						
+					</form>
+		</div>
+		<a href="/register">Register</a>
+		<span id="displayArea"></span>
+</body>
+</html>

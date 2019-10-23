@@ -1,0 +1,8 @@
+package com.batch2;
+
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface RemoteCustomerRepository extends CrudRepository<Customer, Integer> {
+        
+}

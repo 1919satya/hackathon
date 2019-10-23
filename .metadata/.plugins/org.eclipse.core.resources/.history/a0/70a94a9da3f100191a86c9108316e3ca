@@ -1,0 +1,6 @@
+package com.batch2;
+
+
+public class RemoteAddressRepository implements AddressService  {
+  
+}

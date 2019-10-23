@@ -1,0 +1,64 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="formlayout.css" type="text/css" />
+<script src="formlayout.js" ></script>
+</head>
+<body>
+<div id="registration-form">
+			<form>
+					<div id="formHeader" >
+						<h5>SignUp</h5>
+					</div>
+					<form action="/user/authenticate">
+			
+						<table>
+						<tr>
+						<td>Username</td>
+						<td><input type="text" name="username" required></td>
+						</tr>
+						
+						<tr>
+						<td>Password</td>
+						<td><input type="password" name="password" id="password" required ></td>
+						</tr>
+						<tr>
+						<td><input type="submit" value="Submit" /></td>
+						</tr>
+						</table>
+						
+					</form>
+		<a href="/register">Register</a>
+			</form>
+		</div>
+		<span id="displayArea"></span>
+<h2>Login Form</h2>
+<c:out value="${error}" ></c:out>
+
+		<form action="/user/authenticate">
+			<fieldset>
+			<legend>Login Form</legend>
+			<table>
+			<tr>
+			<td>Username</td>
+			<td><input type="text" name="username" required></td>
+			</tr>
+			
+			<tr>
+			<td>Password</td>
+			<td><input type="password" name="password" id="password" required ></td>
+			</tr>
+			<tr>
+			<td><input type="submit" value="Submit" /></td>
+			</tr>
+			</table>
+			</fieldset>
+		</form>
+		<a href="/register">Register</a>
+
+</body>
+</html>

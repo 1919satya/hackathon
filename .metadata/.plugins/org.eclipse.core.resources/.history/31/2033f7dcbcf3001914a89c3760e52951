@@ -1,0 +1,17 @@
+package com.batch2;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class AddressService {
+     @Autowired	
+     private AddressRepository addressRepository;
+     
+     void saveAddress(Address address) {
+    	 
+     }
+     
+      void saveCustomer(String name, int addr_id) {
+	}
+}

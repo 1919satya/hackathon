@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Thu Oct 17 10:21:51 IST 2019
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\coalesce\\.m2\\repository\\org\\springframework\\spring-web\\5.2.0.RELEASE\\spring-web-5.2.0.RELEASE.jar=C\:\\Software\\STS 3.9_64\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\hackathon\\WEB-INF\\lib\\spring-web-5.2.0.RELEASE.jar
+org.eclipse.jst.jee.server\:hackathon=C\:\\Software\\STS 3.9_64\\sts-bundle\\pivotal-tc-server\\instances\\base-instance\\wtpwebapps\\hackathon

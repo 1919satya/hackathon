@@ -1,0 +1,10 @@
+package com.batch2;
+
+
+
+public class AddressRepository implements   {
+   @Query("select max(a.add_id) from Address a ")
+   int getAddressId();
+
+   void saveAddress(Address address);
+  }

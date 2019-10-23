@@ -1,0 +1,16 @@
+package com.batch2;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface LoginRegisterRepository extends JpaRepository<Login, Integer>{
+
+	@Query("select l.username from Login l where username = ?1 and password = ?2 ")
+	String authentication(String username, String password);
+	@Query("Update Login l SET t.title=:title WHERE t.id=:id ")
+	String updateCust_id(int cust_id,String username );
+	
+
+}

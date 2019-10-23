@@ -1,0 +1,14 @@
+package com.batch2;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class RemoteCustomerLoanRepository implements CustomerLoanService {
+
+	@Override
+	public CustomerLoan save(CustomerLoan cl) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

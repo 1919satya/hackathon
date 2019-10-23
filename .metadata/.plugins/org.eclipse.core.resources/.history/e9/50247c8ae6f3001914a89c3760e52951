@@ -1,0 +1,36 @@
+package com.batch2;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+@RestController
+public class LoanController {
+	@Autowired
+	LoanService loanService;
+
+	public void fetchOffers(Loan loan) {
+		loanService.save(loan);
+		int area_code = loan.getArea_code();
+		double area_size = loan.getArea_size();
+		double price = getPropertyPrice(area_code, area_size);
+		String residence = loan.getLegal_residence();
+	}
+
+	public double getPropertyPrice(int area_code, double area_size) {
+		double price;
+		if (area_code >= 10 && area_code < 99) {
+			price = area_size * 1000;
+		} else if (area_code >= 100 && area_code < 1000) {
+			price = area_size * 1100;
+		} else {
+			price = area_size * 1200;
+		}
+		return price;
+	}
+	public String checkKnockOut() {
+		
+	}
+}

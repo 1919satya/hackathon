@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<center>
+		<h1>Apply Loan</h1>
+	</center>
+	<h1>${message}</h1>
+	<form action="/fetchOffers">
+		<table>
+		<tr>
+			<th>Loan Amount</th> 
+			<td><input type="text" name="loanamount" /></td>
+			</tr>
+			<tr>
+			<th>Area Code</th>
+			<td><input type="text" name="area_code"></td>
+			</tr>
+			Area Size:<input type="text" name="area_size"><br /> <br/>
+			Legal Residence:<input type="text" name="legal_residence"><br/><br/>
+			CreditScore :<input type="text" name="credit_score"><br/><br/>
+			<input type="submit" value="Apply">
+		</table>
+	</form>
+
+</body>
+</html>

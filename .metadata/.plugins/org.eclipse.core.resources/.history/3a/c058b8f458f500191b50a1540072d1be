@@ -1,0 +1,14 @@
+package com.batch2;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class CustomerLoanService {
+   @Autowired
+   CustomerLoanRepository customer_LoanRepository;
+   
+   public CustomerLoan save(CustomerLoan cl) {
+	   return  customer_LoanRepository.save(cl);   
+   }
+}

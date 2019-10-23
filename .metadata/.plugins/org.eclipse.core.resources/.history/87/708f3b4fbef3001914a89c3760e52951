@@ -1,0 +1,19 @@
+package com.batch2;
+
+
+
+public class AddressRepository implements AddressService {
+
+	@Override
+	public void save(Address address) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getAddressId() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+  
+  }

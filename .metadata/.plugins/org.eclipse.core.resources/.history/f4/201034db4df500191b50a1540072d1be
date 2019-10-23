@@ -1,0 +1,95 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/WEB-INF/pages/css/form.css" type="text/css" />
+<style>
+*{
+	margin:0;
+}
+html {
+	position:relative;
+	height:100%;
+}
+
+#registration-form {
+	position:absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-color:#deeeed;
+	/*border:1px solid black;
+	padding:10px;*/
+}
+.formDivs{
+	background-color:#00ffcc;
+	text-align:center;
+}
+#formHeader{
+	margin:5px;
+	border:0;
+	background-color:#00ffcc;
+	text-align:center;
+	height:40px; 
+	line-height:40px;
+}
+#formButton, #formHeader h5{
+	color:white;
+	font-size:18px;
+	font-weight: bold;
+}
+table{
+	margin:10px;
+	border-spacing: 0 0.5rem;
+}
+input {
+	padding:5px;
+	border:0.1px solid #827f7d; 
+	width:250px;
+	height:30px;
+}
+
+input[type="button"] {
+	background-color:#00ffcc;
+	border:0;
+	padding:0;
+	display:block;
+}
+input[type="button"]:hover {
+	cursor:pointer;
+}
+</style>
+</head>
+<body>
+<c:out value="${error}" ></c:out>
+<div id="registration-form">
+			
+					<div id="formHeader" >
+						<h5>Login</h5>
+					</div>
+					<form action="/user/authenticate">
+			
+						<table>
+						<tr>
+							<td><input type="text" name="username" id="username" required placeholder="Username"></td>
+						</tr>
+						
+						<tr>
+							<td><input type="password" name="password" id="password" required placeholder="Password" ></td>
+						</tr>
+						<tr>
+							<td><div  class="formDivs">
+								<input type="button" id="formButton" value="Login"/>
+							</div></td>
+						</tr>
+						</table>
+						
+					</form>
+		</div>
+		<a href="/register">Register</a>
+		<span id="displayArea"></span>
+</body>
+</html>

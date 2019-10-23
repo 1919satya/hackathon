@@ -1,0 +1,7 @@
+spring.application.name=BankWebClient
+spring.mvc.view.prefix=/WEB-INF/pages/
+spring.mvc.view.suffix=.jsp
+eureka.client.service-url.defaultZone=http://localhost:1111/eureka/
+server.port=8888
+server.error.whitelabel.enabled=false
+

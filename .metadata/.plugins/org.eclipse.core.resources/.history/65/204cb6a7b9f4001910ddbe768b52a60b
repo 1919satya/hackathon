@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Suggested Loan Product</h1>
+	<form action="/applyloan">
+		<table border="3">
+			<tr>
+				<th>Loan Amount</th>
+				<th>Loan Item Name</th>
+				<th>      </th>
+			</tr>
+			<tr>
+				<td><c:out value="${Item.amount}"></c:out></td>
+				<td><c:out value="${Item.item_name }"></c:out></td>
+				<td><input type="checkbox"></input></td>			
+			</tr>
+		</table>
+		
+		<input type="submit" value="Apply" />
+	</form>
+</body>
+</html>

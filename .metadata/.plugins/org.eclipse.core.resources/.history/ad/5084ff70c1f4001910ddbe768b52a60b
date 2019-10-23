@@ -1,0 +1,30 @@
+package com.batch2;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class LoanController {
+	@Autowired
+	LoanService loanService;
+	@Autowired
+	CustomerLoanService customerLoanService;
+	private static final Logger logger = Logger.getLogger(LoanController.class);
+
+	@PostMapping("/fetchOffers")
+	public Items fetchOffers(@RequestBody Loan loan) {
+		System.out.println("LoanService : fectchOffers()");
+		return loanService.save(loan);
+	}
+
+	@RequestMapping("/applyloan")
+	public CustomerLoan save(@RequestBody CustomerLoan cl) {
+		System.out.println("CustomerLoanService:applyloan");
+		return customerLoanService.save(cl);
+	}
+
+}

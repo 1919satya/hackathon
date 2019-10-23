@@ -1,0 +1,6 @@
+package com.batch2;
+
+public class Items {
+   private int item_id;
+   private double amount;
+}

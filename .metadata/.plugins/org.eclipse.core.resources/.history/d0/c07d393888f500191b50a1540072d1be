@@ -1,0 +1,54 @@
+*{
+	margin:0;
+}
+html {
+	position:relative;
+	height:100%;
+}
+
+#registration-form {
+	position:absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-color:#deeeed;
+	/*border:1px solid black;
+	padding:10px;*/
+}
+.formDivs{
+	background-color:#00ffcc;
+	text-align:center;
+}
+#formHeader{
+	margin:5px;
+	border:0;
+	background-color:#00ffcc;
+	text-align:center;
+	height:40px; 
+	line-height:40px;
+}
+#formButton, #formHeader h5{
+	color:white;
+	font-size:18px;
+	font-weight: bold;
+}
+table{
+	margin:10px;
+	border-spacing: 0 0.5rem;
+}
+input {
+	padding:5px;
+	border:0.1px solid #827f7d; 
+	width:250px;
+	height:30px;
+}
+
+input[type="button"] {
+	background-color:#00ffcc;
+	border:0;
+	padding:0;
+	display:block;
+}
+input[type="button"]:hover {
+	cursor:pointer;
+}
