@@ -9,7 +9,7 @@ public class AddressService {
 	@Autowired
 	private AddressRepository addressRepository;
 
-	void saveCustomer(String name, int addr_id) {
+	void saveCustomer(String name, Integer addr_id) {
 	}
 
 	public Address save(Address address) {
@@ -17,7 +17,7 @@ public class AddressService {
 		return addressRepository.save(address);
 	}
 
-	public int getAddressId() {
+	public Integer getAddressId() {
 
 		return addressRepository.getAddressId();
 	}

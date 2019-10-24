@@ -4,25 +4,25 @@ package com.batch2;
 
 public class Items {
 	
-	private int item_id;
+	private Integer item_id;
 	private String item_name;
 	private double amount;
 	private double score;
-	private int loan_id;
+	private Integer loan_id;
 
-	public int getLoan_id() {
+	public Integer getLoan_id() {
 		return loan_id;
 	}
 
-	public void setLoan_id(int loan_id) {
+	public void setLoan_id(Integer loan_id) {
 		this.loan_id = loan_id;
 	}
 
-	public int getItem_id() {
+	public Integer getItem_id() {
 		return item_id;
 	}
 
-	public void setItem_id(int item_id) {
+	public void setItem_id(Integer item_id) {
 		this.item_id = item_id;
 	}
 

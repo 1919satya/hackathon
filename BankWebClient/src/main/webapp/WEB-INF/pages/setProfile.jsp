@@ -17,7 +17,7 @@
 			<table>
 				<tr>
 					<th>Login_id</th>
-					<td><input type="text" name="login_id" value=${login_id}></td>
+					<td><input type="text" name="login_id" readonly="readonly" value=${login_id} ></td>
 				</tr>
 
 				<tr>

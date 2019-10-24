@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="HackathonApplicationTests" project="BankhackathonBatch2" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.batch2.HackathonApplicationTests" time="0.641" displayname="HackathonApplicationTests" uniqueid="[engine:junit-vintage]/[runner:com.batch2.HackathonApplicationTests]">
+    <testcase name="testApproveLoginSuccess" classname="com.batch2.HackathonApplicationTests" time="0.608" displayname="testApproveLoginSuccess" uniqueid="[engine:junit-vintage]/[runner:com.batch2.HackathonApplicationTests]/[test:testApproveLoginSuccess(com.batch2.HackathonApplicationTests)]"/>
+    <testcase name="testApproveLoginFailure" classname="com.batch2.HackathonApplicationTests" time="0.033" displayname="testApproveLoginFailure" uniqueid="[engine:junit-vintage]/[runner:com.batch2.HackathonApplicationTests]/[test:testApproveLoginFailure(com.batch2.HackathonApplicationTests)]"/>
+  </testsuite>
+</testrun>

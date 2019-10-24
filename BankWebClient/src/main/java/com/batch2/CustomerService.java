@@ -4,5 +4,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface CustomerService {
-	public int getCust_idByLogin_id(int login_id);
+	public Integer getCust_idByLogin_id(Integer login_id);
 }

@@ -3,6 +3,8 @@ package com.batch2;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +22,7 @@ public class AddressController {
 	@Autowired
 	LoginRegisterService loginRegisterService;
 
-	int cust_id;
+	Integer cust_id;
 
 	private static final Logger logger = Logger.getLogger(AddressController.class);
 
@@ -30,29 +32,33 @@ public class AddressController {
 	 */
 
 	@RequestMapping("/saveDetails")
-	public String saveAddress(@RequestBody Address address) {
+	public ResponseEntity<String> saveAddress(@RequestBody Address address) {
+		logger.info("Saving the address details to database");
 		String name = address.getName();
-		int login_id = address.getLogin_id();
+		Integer login_id = address.getLogin_id();
 		logger.info("Address Controller: saveDetails");
-		addressService.save(address);
+		Address a = addressService.save(address);
 
-		int addr_id = addressService.getAddressId();
-		System.out.println("login_id is :" + login_id);
+		Integer addr_id = addressService.getAddressId();
+		logger.info("login_id is :" + login_id);
 		// loginRegisterService.update(login_id);
 
-		System.out.println("Addr_ID : " + addr_id);
-		System.out.println("NAME : " + name);
-
-		return saveCustomer(name, addr_id, login_id);
+		logger.info("Addr_ID : " + addr_id);
+		logger.info("NAME : " + name);
+		if (a.getAdd_id() == addr_id) {
+			return new ResponseEntity<String>("addr_id", HttpStatus.OK);
+		} else {
+			return new ResponseEntity<String>("addr_id", HttpStatus.BAD_REQUEST);
+		}
 
 	}
 
 	@RequestMapping("/getCust_id")
-	public int getCust_id() {
+	public Integer getCust_id() {
 		return cust_id;
 	}
 
-	public String saveCustomer(String name, int addr_id, int login_id) {
+	public String saveCustomer(String name, Integer addr_id, Integer login_id) {
 		System.out.println("Address Controller: Saving Customer");
 		Customer customer = new Customer();
 		customer.setName(name);

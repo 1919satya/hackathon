@@ -9,11 +9,13 @@ public class CustomerService {
 	@Autowired
 	CustomerRepository customerRepository;
 
-	public int getCustomerId() {
+	public Integer getCustomerId() {
 
 		return customerRepository.getCust_id();
 	}
-	public int getCust_idByLogin_id(int login_id) {
-		return customerRepository.getCust_idByLogin_id(login_id);
+	public Integer getCust_idByLogin_id(Integer login_id) {
+		Integer custId = customerRepository.getCust_idByLogin_id(login_id);
+		
+		return custId;
 	}
 }

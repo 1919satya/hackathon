@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface AddressRepository extends CrudRepository<Address, Integer>,JpaRepository<Address, Integer> {
    @Query("select max(a.add_id) from Address a ")
-   int getAddressId();
+   Integer getAddressId();
 }
 
    

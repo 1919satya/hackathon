@@ -1,9 +1,9 @@
 package com.batch2;
 
 public class Loan {
-    private int loan_id;
+    private Integer loan_id;
     private double loanamount;
-    private int area_code;
+    private Integer area_code;
     private double area_size;
     private double credit_score;
     private String legal_residence;
@@ -14,10 +14,10 @@ public class Loan {
 	public void setCredit_score(double credit_score) {
 		this.credit_score = credit_score;
 	}
-	public int getLoan_id() {
+	public Integer getLoan_id() {
 		return loan_id;
 	}
-	public void setLoan_id(int loan_id) {
+	public void setLoan_id(Integer loan_id) {
 		this.loan_id = loan_id;
 	}
 	public double getLoanamount() {
@@ -26,10 +26,10 @@ public class Loan {
 	public void setLoanamount(double loanamount) {
 		this.loanamount = loanamount;
 	}
-	public int getArea_code() {
+	public Integer getArea_code() {
 		return area_code;
 	}
-	public void setArea_code(int area_code) {
+	public void setArea_code(Integer area_code) {
 		this.area_code = area_code;
 	}
 	public double getArea_size() {

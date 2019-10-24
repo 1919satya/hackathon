@@ -2,24 +2,24 @@ package com.batch2;
 
 public class Customer {
 	
-     private int cust_id;
+     private Integer cust_id;
      private String name;
-     private int type;
+     private Integer type;
      private double credit_score;
-     private int add_id;
-     private int login_id;
+     private Integer add_id;
+     private Integer login_id;
      
      
-	public int getLogin_id() {
+	public Integer getLogin_id() {
 		return login_id;
 	}
-	public void setLogin_id(int login_id) {
+	public void setLogin_id(Integer login_id) {
 		this.login_id = login_id;
 	}
-	public int getCust_id() {
+	public Integer getCust_id() {
 		return cust_id;
 	}
-	public void setCust_id(int cust_id) {
+	public void setCust_id(Integer cust_id) {
 		this.cust_id = cust_id;
 	}
 	public String getName() {
@@ -28,10 +28,10 @@ public class Customer {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getType() {
+	public Integer getType() {
 		return type;
 	}
-	public void setType(int type) {
+	public void setType(Integer type) {
 		this.type = type;
 	}
 	public double getCredit_score() {
@@ -40,10 +40,10 @@ public class Customer {
 	public void setCredit_score(double credit_score) {
 		this.credit_score = credit_score;
 	}
-	public int getAdd_id() {
+	public Integer getAdd_id() {
 		return add_id;
 	}
-	public void setAdd_id(int add_id) {
+	public void setAdd_id(Integer add_id) {
 		this.add_id = add_id;
 	}
 	@Override

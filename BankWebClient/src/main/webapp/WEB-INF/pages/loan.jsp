@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +6,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<center>
+	
 		<h1>Apply Loan</h1>
-	</center>
+	
 	<h1>${message}</h1>
 	<form action="/fetchOffers">
 		<table>

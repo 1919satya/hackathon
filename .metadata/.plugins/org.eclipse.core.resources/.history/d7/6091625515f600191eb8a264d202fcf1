@@ -1,0 +1,39 @@
+package com.batch2;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class LoginRegisterService {
+
+	@Autowired
+	private LoginRegisterRepository loginRegisterRepository;
+	String username;
+	
+	String authentication(String username, String password) {
+		this.username=username;
+		int cust_id = loginRegisterRepository.approveLogin(username, password);
+		
+		 return loginRegisterRepository.authentication(username, password);
+	}
+	
+	int approveLogin(String username, String password) {
+		this.username=username;
+		Integer cust_id = loginRegisterRepository.approveLogin(username, password);
+		return cust_id;
+	}
+
+	public int save(Login login) {
+		// System.out.println("WebClient : LoginRegisterService..Registration");
+		System.out.println(login.toString());
+		Login result = loginRegisterRepository.save(login);
+		System.out.println(result.toString());
+		if(result.getUsername().equals(login.getUsername())) {
+			return result.getLogin_id();
+		} else {
+			return -1;
+		}
+	}
+	
+	
+}

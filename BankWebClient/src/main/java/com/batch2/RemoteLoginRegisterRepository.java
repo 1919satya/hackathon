@@ -36,19 +36,19 @@ public class RemoteLoginRegisterRepository implements LoginRegisterService{
 	}
 
 	@Override
-	public int save(String username,String password) {
+	public Integer save(String username,String password) {
 		// System.out.println("authentication in RemoteLoginRegisterRepository");
 		String url = serviceUrl + "/user/validateRegistrationForm"+"/"+username+"/"+password;
 		// System.out.println(url);
-		int result = restTemplate.getForObject(url, Integer.class);
+		Integer result = restTemplate.getForObject(url, Integer.class);
 		return result;
 	}
 
 	@Override
-	public int approveLogin(String username, String password) {
+	public Integer[] approveLogin(String username, String password) {
 		String url = serviceUrl + "/user/approveLogin/"+username+"/"+password;
 		// System.out.println(url);
-		return restTemplate.getForObject(url, Integer.class);
+		return restTemplate.getForObject(url, Integer[].class);
 		
 	}
 	

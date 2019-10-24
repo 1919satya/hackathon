@@ -1,5 +1,6 @@
 package com.batch2;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,29 +10,21 @@ public class LoginRegisterService {
 	@Autowired
 	private LoginRegisterRepository loginRegisterRepository;
 	String username;
+	private static final Logger logger = Logger.getLogger(AddressController.class);
 	
-	String authentication(String username, String password) {
+	
+	Integer approveLogin(String username, String password) {
 		this.username=username;
-		int cust_id = loginRegisterRepository.approveLogin(username, password);
+		logger.info("Approving Login Details...");
+		return loginRegisterRepository.approveLogin(username, password);
 		
-		 return loginRegisterRepository.authentication(username, password);
-	}
-	
-	int approveLogin(String username, String password) {
-		this.username=username;
-		Integer cust_id = loginRegisterRepository.approveLogin(username, password);
-		if(cust_id != null) {
-			return cust_id;
-		} else {
-			return -1;
-		}
 	}
 
-	public int save(Login login) {
+	public Integer save(Login login) {
 		// System.out.println("WebClient : LoginRegisterService..Registration");
-		System.out.println(login.toString());
+		logger.info(login.toString());
 		Login result = loginRegisterRepository.save(login);
-		System.out.println(result.toString());
+		logger.info(result.toString());
 		if(result.getUsername().equals(login.getUsername())) {
 			return result.getLogin_id();
 		} else {

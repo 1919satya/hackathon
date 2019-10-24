@@ -21,7 +21,7 @@ public class RemoteCustomerRepository implements CustomerService{
 		this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl : "http://"+serviceUrl;
 	}
 	@Override
-	public int getCust_idByLogin_id(int login_id) {
+	public Integer getCust_idByLogin_id(Integer login_id) {
 			String url = serviceUrl + "/getCust_id/"+login_id;
 			System.out.println(url);
 			int result=restTemplate.getForObject(url, Integer.class);

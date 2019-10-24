@@ -5,35 +5,35 @@ import java.util.Date;
 
 public class CustomerLoan {
 
-	private int loan_id;
-	private int cust_id;
-	private int item_id;
+	private Integer loan_id;
+	private Integer cust_id;
+	private Integer item_id;
 	private Date applied_on;
 	private String status;
 	private double appliedAmount;
 	private double approvedAmount;
 
-	public int getLoan_id() {
+	public Integer getLoan_id() {
 		return loan_id;
 	}
 
-	public void setLoan_id(int loan_id) {
+	public void setLoan_id(Integer loan_id) {
 		this.loan_id = loan_id;
 	}
 
-	public int getCust_id() {
+	public Integer getCust_id() {
 		return cust_id;
 	}
 
-	public void setCust_id(int cust_id) {
+	public void setCust_id(Integer cust_id) {
 		this.cust_id = cust_id;
 	}
 
-	public int getItem_id() {
+	public Integer getItem_id() {
 		return item_id;
 	}
 
-	public void setItem_id(int item_id) {
+	public void setItem_id(Integer item_id) {
 		this.item_id = item_id;
 	}
 

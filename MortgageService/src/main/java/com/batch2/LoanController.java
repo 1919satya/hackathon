@@ -34,7 +34,7 @@ public class LoanController {
 	public CustomerLoan save(@RequestBody CustomerLoan cl) {
 		logger.info("CustomerLoanService:applyloan");
 		logger.info(cl.toString());
-		customerLoanService.save(cl);
+		// customerLoanService.save(cl);
 		return customerLoanService.save(cl);
 	}
 	

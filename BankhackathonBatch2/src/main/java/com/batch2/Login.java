@@ -13,7 +13,7 @@ import javax.persistence.Transient;
 public class Login {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int login_id;
+	private Integer login_id;
 	@Column
 	private String username;
 	@Column
@@ -32,11 +32,11 @@ public class Login {
 		this.confirmPassword = confirmPassword;
 	}
 
-	public int getLogin_id() {
+	public Integer getLogin_id() {
 		return login_id;
 	}
 
-	public void setLogin_id(int login_id) {
+	public void setLogin_id(Integer login_id) {
 		this.login_id = login_id;
 	}
 

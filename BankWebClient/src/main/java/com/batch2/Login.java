@@ -3,7 +3,7 @@ package com.batch2;
 
 public class Login {
 	
-	private int login_id;
+	private Integer login_id;
 	private String username;
 	private String password;
 	
@@ -17,11 +17,11 @@ public class Login {
 		this.confirmPassword = confirmPassword;
 	}
 
-	public int getLogin_id() {
+	public Integer getLogin_id() {
 		return login_id;
 	}
 
-	public void setLogin_id(int login_id) {
+	public void setLogin_id(Integer login_id) {
 		this.login_id = login_id;
 	}
 

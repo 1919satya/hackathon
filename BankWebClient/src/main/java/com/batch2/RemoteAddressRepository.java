@@ -31,7 +31,7 @@ public class RemoteAddressRepository implements AddressService  {
 	}
 
 	@Override
-	public int getCustId() {
+	public Integer getCustId() {
 		String url = serviceUrl + "/address/getCust_id";
 		System.out.println(url);
 		 Integer result= restTemplate.getForObject(url,Integer.class);

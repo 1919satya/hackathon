@@ -30,7 +30,8 @@ public class WebClientController {
 	
 	private static final Logger logger = Logger.getLogger(WebClientController.class);
 
-	int cust_id;
+	Integer cust_id;
+	Integer login_id;
 	int loan_id;
 	int item_id;
 
@@ -107,11 +108,11 @@ public class WebClientController {
 		logger.info("WebClient :Controller :  Registration ....." + username + "/" + password);
 		if (password.equals(confirmPassword)) {
 
-			result = loginRegisterService.save(username, password);
+			login_id = loginRegisterService.save(username, password);
 			// handle username already exist error
 			// if registration is successfull the go to SetProfile page
 			if (result != -1) {
-				mv.addObject("login_id", result);
+				mv.addObject("login_id", login_id);
 				mv.setViewName("setProfile");
 			} else {
 				mv.addObject("error", result);
@@ -129,16 +130,23 @@ public class WebClientController {
 	public ModelAndView loginAuthentication(String username, String password) {
 		logger.info("authentication in web controller");
 		// String name = loginRegisterService.authentication(username, password);
-		cust_id = loginRegisterService.approveLogin(username, password);
+		Integer[] ids = loginRegisterService.approveLogin(username, password);
+		cust_id =ids[1];
 		logger.info("WebClientController:LoginAuthentication "+cust_id);
 		ModelAndView mv = new ModelAndView();
-		if (cust_id != -1) {
+		if(cust_id == null) {
+			mv.addObject("login_id", ids[0]);
+			mv.setViewName("setProfile");
+		}
+		else if (cust_id == 0) {
+			mv.addObject("error", "Username or Password incorrect");
+			mv.setViewName("login");
+			
+			logger.info("WebClientController : CustomerId " + cust_id);
+		} else {
 			mv.addObject("cust_id",cust_id);
 			mv.setViewName("home");
 			logger.info("WebClientController : CustomerId " + cust_id);
-		} else {
-			mv.addObject("error", "Username or Password incorrect");
-			mv.setViewName("login");
 		}
 		return mv;
 	}

@@ -9,12 +9,10 @@
 <body>
 	<div id="registration-form">
 		<form action="/validateRegistrationForm">
-			
 				<table>
 					<tr>
 						<td><input type="text" name="username" required placeholder="Username"></td>
 					</tr>
-
 					<tr> 
 						<td><input type="password" name="password" required placeholder="Password"></td>
 					</tr>
@@ -28,7 +26,6 @@
 						<td><div  class="formDivs"><input type="submit" value="Submit" /></div></td>
 					</tr>
 				</table>
-				
 		</form>
 	</div>
 </body>

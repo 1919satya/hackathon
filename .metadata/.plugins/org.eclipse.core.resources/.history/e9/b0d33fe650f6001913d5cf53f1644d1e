@@ -1,0 +1,75 @@
+create database bankdb;
+use bankdb;
+
+
+CREATE TABLE `address` (
+  `add_id` int(11) NOT NULL AUTO_INCREMENT,
+  `house_no` varchar(30) DEFAULT NULL,
+  `street` varchar(30) DEFAULT NULL,
+  `city` varchar(30) DEFAULT NULL,
+  `state` varchar(30) DEFAULT NULL,
+  `country` varchar(30) DEFAULT NULL,
+  `near_by` varchar(30) DEFAULT NULL,
+  `area_code` int(11) DEFAULT NULL,
+  `email` varchar(30) DEFAULT NULL,
+  `phoneno` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`add_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `customer` (
+  `cust_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) NOT NULL,
+  `type` int(11) DEFAULT '1',
+  `credit_score` double(3,2) DEFAULT NULL,
+  `add_id` int(11) DEFAULT NULL,
+  `login_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`cust_id`),
+  KEY `login_id` (`login_id`),
+  KEY `add_id` (`add_id`),
+  CONSTRAINT `customer_ibfk_1` FOREIGN KEY (`login_id`) REFERENCES `login` (`login_id`),
+  CONSTRAINT `customer_ibfk_2` FOREIGN KEY (`add_id`) REFERENCES `address` (`add_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `customer_loan` (
+  `loan_id` int(11) DEFAULT NULL,
+  `cust_id` int(11) DEFAULT NULL,
+  `item_id` int(11) DEFAULT NULL,
+  `applied_on` date DEFAULT NULL,
+  `status` varchar(30) DEFAULT NULL,
+  KEY `loan_id` (`loan_id`),
+  KEY `cust_id` (`cust_id`),
+  KEY `item_id` (`item_id`),
+  CONSTRAINT `customer_loan_ibfk_1` FOREIGN KEY (`loan_id`) REFERENCES `loan` (`loan_id`),
+  CONSTRAINT `customer_loan_ibfk_2` FOREIGN KEY (`cust_id`) REFERENCES `customer` (`cust_id`),
+  CONSTRAINT `customer_loan_ibfk_3` FOREIGN KEY (`item_id`) REFERENCES `items` (`item_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `items` (
+  `item_id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_name` varchar(30) DEFAULT NULL,
+  `amount` double(10,2) DEFAULT NULL,
+  `score` double(5,2) DEFAULT NULL,
+  PRIMARY KEY (`item_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `loan` (
+  `loan_id` int(11) NOT NULL AUTO_INCREMENT,
+  `loanamount` double(16,4) DEFAULT NULL,
+  `area_code` int(11) DEFAULT NULL,
+  `area_size` double(16,4) DEFAULT NULL,
+  `credit_score` double(12,4) DEFAULT NULL,
+  `legal_residence` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`loan_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `login` (
+  `login_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  PRIMARY KEY (`login_id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;

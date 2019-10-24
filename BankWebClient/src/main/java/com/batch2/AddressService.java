@@ -8,7 +8,7 @@ public interface AddressService {
 	 void save(Address address);
 		
 
-	 public int getCustId();
+	 public Integer getCustId();
 		
     
 }

@@ -7,8 +7,8 @@ public interface LoginRegisterService {
 
 	String authentication(String username, String password);
 
-	public int save(String username, String password);
+	public Integer save(String username, String password);
 	
-	int approveLogin(String username, String password);
+	Integer[] approveLogin(String username, String password);
 	
 }

@@ -1,0 +1,51 @@
+package com.batch2;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class LoginRegisterService {
+
+	@Autowired
+	private LoginRegisterRepository loginRegisterRepository;
+	
+	@Autowired
+	private CustomerRepository customerRepository;
+	
+	String username;
+	private static final Logger logger = Logger.getLogger(LoginController.class);
+	
+	
+	Integer approveLogin(String username, String password) {
+		this.username=username;
+		Integer login_id = loginRegisterRepository.approveLogin(username, password);
+		logger.info("LoginId : "+login_id);
+		
+		Integer cust_id = (customerRepository.save(customer)).getCust_id();
+		return cust_id;
+		/*
+		 * if(cust_id != null) { return cust_id; } else { return -1; }
+		 */
+	}
+
+	public Integer save(Login login) {
+		// System.out.println("WebClient : LoginRegisterService..Registration");
+		logger.info(login.toString());
+		Login result = loginRegisterRepository.save(login);
+		logger.info(result.toString());
+		
+		Customer customer = new Customer();
+		customer.setLogin_id(result.getLogin_id());
+		Integer cust_id = (customerRepository.save(customer)).getCust_id();
+		return cust_id;
+		
+		if(result.getUsername().equals(login.getUsername())) {
+			return result.getLogin_id();
+		} else {
+			return -1;
+		}
+	}
+	
+	
+}

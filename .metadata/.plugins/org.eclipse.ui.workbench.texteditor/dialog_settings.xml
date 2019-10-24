@@ -9,6 +9,7 @@
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
 			<item value="System.out.println"/>
+			<item value="item"/>
 		</list>
 		<list key="replacehistory">
 			<item value="logger.info"/>

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Dashboard </title>
+<title>Dashboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -12,14 +12,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </style>
 </head>
 <body>
-
-<h1>Hello</h1> 
-
-<a href="/loan">Check For Loan</a>
-<a href="/existingLoan?cust_id=${cust_id}">Existing Loan</a>
-<a href="/martgageCalc">Mortgage Calculator</a>
-
-		
-
+	<h1>Hello</h1> 
+	<a href="/loan">Check For Loan</a><br><br>
+	<a href="/existingLoan?cust_id=${cust_id}">Existing Loan</a><br><br>
+	<a href="/martgageCalc">Mortgage Calculator</a><br><br>
 </body>
 </html>
